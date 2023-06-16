@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{%block title%}Home{% endblock %}
+{%block content%}
+
+{% for msg in get_flashed_messages() %}
+<p class="flash">{{msg}}</p>
+{% endfor %}
+
+<p>Question: {{question}}</p>
+<form action="#" method="post">
+    {% for choice in choices%}
+    <input type="radio" id="{{choice}}"" name="selected_option" value="{{choice}}"> 
+    <label for="{{choice}}">{{choice}}</label>
+    {% endfor %}
+    <button type="submit">SUBMIT</button>
+</form>
+
+
+
+{% endblock %}
+
+
+
+
