@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{%block title%}Home{% endblock %}
+{%block content%}
+
+<h1>{{title}}</h1>
+
+<p>Instructions: {{instructions}}</p>
+
+<a href="/survey/{{survey}}/question/0">Proceed</a>
+<hr>
+<section id="debugging">
+    Session['responses'] =  {{session['responses']}}
+</section>
+
+
+
+
+{% endblock %}

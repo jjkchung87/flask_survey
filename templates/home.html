@@ -2,10 +2,21 @@
 {%block title%}Home{% endblock %}
 {%block content%}
 
-<h1>{{title}}</h1>
+<h1>Please select a survey</h1>
 
-<p>Instructions: {{instructions}}</p>
 
-<a href="/question/0" class="button">Proceed</a>
+<form method="post" >
+    {% for survey in surveys%}
+        {{survey}}<input type="radio" name="selected-survey" id="{{survey}}" value="{{survey}}">
+    {% endfor %}
+    <button type="submit">Proceed</a>    
+</form>
+
+<hr>
+<section id="debugging">
+    Session['responses'] =  {{session['responses']}}
+</section>
+
+
 
 {% endblock %}

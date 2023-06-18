@@ -7,13 +7,23 @@
 {% endfor %}
 
 <p>Question: {{question}}</p>
-<form action="#" method="post">
+<form method="post">
+    
     {% for choice in choices%}
-    <input type="radio" id="{{choice}}"" name="selected_option" value="{{choice}}"> 
-    <label for="{{choice}}">{{choice}}</label>
-    {% endfor %}
+        <input type="radio" id="{{choice}}"" name="selected_option" value="{{choice}}"> 
+        <label for="{{choice}}">{{choice}}</label>
+    {% endfor %}       
+    
+    {% if allowText %}       
+        <label for="Other">Other:</label>
+        <input type="text" id="Other" placeholder="Other" name="selected_option">
+    {% endif %}
     <button type="submit">SUBMIT</button>
 </form>
+<hr>
+<section id="debugging">
+    Session['responses'] =  {{session['responses']}}
+</section>
 
 
 
